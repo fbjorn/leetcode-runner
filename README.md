@@ -9,6 +9,13 @@ LeetCode solutions runner
 
 # Usage
 
+1. Install the library from PyPi
+2. Go to [LeetCode](https://leetcode.com) and pick a problem to solve
+3. Open your favourite IDE and import the `leetcode_runner`
+4. Copy a problem samples into some variable, like a `problem`, and copy the base `Solution` class that LeetCode provides
+5. `LeetCode(problem, Solution).check()` will run these samples!
+6. Pass your own samples into `check` function _(not implemented yet)_
+
 ```py
 from leetcode_runner import LeetCode 
 from typing import *
