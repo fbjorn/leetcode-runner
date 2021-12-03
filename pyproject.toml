@@ -1,0 +1,76 @@
+[tool.poetry]
+
+name = "leetcode-runner"
+version = "0.0.1"
+description = "LeetCode solutions runner"
+
+license = "MIT"
+
+authors = ["fbjorn <denis@fbjorn.cc>"]
+
+readme = "README.md"
+
+homepage = "https://pypi.org/project/leetcode_runner"
+documentation = "https://github.com/fbjorn/leetcode-runner"
+repository = "https://github.com/fbjorn/leetcode-runner"
+
+keywords = [
+    "leetcode",
+    "runner",
+]
+classifiers = [
+    # TODO: update this list to match your application: https://pypi.org/pypi?%3Aaction=list_classifiers
+    "Development Status :: 1 - Planning",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+]
+
+[tool.poetry.dependencies]
+
+python = "^3.9"
+
+# TODO: Remove these and add your library's requirements
+click = "^7.0"
+minilog = "^2.0"
+
+[tool.poetry.dev-dependencies]
+
+# Formatters
+black = "=21.8b0"
+isort = "=5.9.3"
+
+# Linters
+mypy = "~0.812"
+pydocstyle = "^6.1"
+pylint = "~2.6"
+
+# Testing
+pytest = "^6.2"
+pytest-describe = "^2.0"
+pytest-expecter = "^2.1"
+pytest-random = "*"
+pytest-cov = "^2.12"
+freezegun = "*"
+
+# Reports
+coveragespace = "^4.0"
+
+[tool.poetry.scripts]
+
+leetcode_runner = "leetcode_runner.cli:main"
+
+[tool.black]
+
+quiet = true
+
+[tool.isort]
+
+profile = "black"
+
+[build-system]
+
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
