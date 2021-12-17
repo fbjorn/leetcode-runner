@@ -1,7 +1,7 @@
 [tool.poetry]
 
 name = "leetcode-runner"
-version = "0.0.2"
+version = "0.0.3"
 description = "LeetCode solutions runner"
 
 license = "MIT"
@@ -31,10 +31,9 @@ classifiers = [
 [tool.poetry.dependencies]
 
 python = "^3.9"
+colorama = "^0.4.4"
+termcolor = "^1.1.0"
 
-# TODO: Remove these and add your library's requirements
-click = "^7.0"
-minilog = "^2.0"
 
 [tool.poetry.dev-dependencies]
 
@@ -45,7 +44,7 @@ isort = "=5.9.3"
 # Linters
 mypy = "~0.812"
 pydocstyle = "^6.1"
-pylint = "~2.6"
+pylint = "~2.12.2"
 
 # Testing
 pytest = "^6.2"

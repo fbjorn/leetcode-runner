@@ -1,5 +1,6 @@
 from pkg_resources import DistributionNotFound, get_distribution
 
+from .models import Args, TestCase
 from .runner import LeetCode
 
 try:

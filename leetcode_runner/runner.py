@@ -1,4 +1,8 @@
 import re
+from typing import List, Optional
+
+from leetcode_runner.log import print_case_summary, print_dashes, print_session_summary
+from leetcode_runner.models import TestCase
 
 
 class LeetCode:
@@ -35,16 +39,26 @@ class LeetCode:
             return True
         return eval(output)
 
-    def check(self):
+    def check(self, extra_cases: Optional[List[TestCase]] = None) -> List[bool]:
+        extra_cases = extra_cases or []
+        results = []
+
         for input_str, output_str in self.test_cases:
-            print("-" * 10)
+            print_dashes()
 
             expected = self.eval_output(output_str)
             actual = eval(f"self.solution.{self.fn_name}({input_str})")
 
-            if actual != expected:
-                print("[ FAILED ]")
+            print_case_summary(input_str, actual, expected)
+            results.append(actual == expected)
 
-            print(input_str)
-            print("Expected:", expected)
-            print("Actual  :", actual)
+        for test_case in extra_cases:
+            print_dashes()
+            fn = getattr(self.solution, self.fn_name)
+            actual = fn(*test_case.args.args, **test_case.args.kwargs)
+
+            print_case_summary(test_case.args, actual, test_case.answer)
+            results.append(actual == test_case.answer)
+
+        print_session_summary(results)
+        return results

@@ -43,12 +43,6 @@ Run static analysis:
 $ make check
 ```
 
-Build the documentation:
-
-```text
-$ make docs
-```
-
 ## Automatic
 
 Keep all of the above tasks running on change:
@@ -66,14 +60,6 @@ The CI server will report overall build status:
 ```text
 $ make ci
 ```
-
-# Demo Tasks
-
-Run the program:
-
-```text
-$ make run
-````
 
 Launch an IPython session:
 

@@ -1,7 +1,5 @@
 # Overview
 
-⚠️ Work in progress
-
 LeetCode solutions runner
 
 [![PyPI Version](https://img.shields.io/pypi/v/leetcode-runner.svg)](https://pypi.org/project/leetcode-runner)
@@ -14,10 +12,10 @@ LeetCode solutions runner
 3. Open your favourite IDE and import the `leetcode_runner`
 4. Copy a problem samples into some variable, like a `problem`, and copy the base `Solution` class that LeetCode provides
 5. `LeetCode(problem, Solution).check()` will run these samples!
-6. Pass your own samples into `check` function _(not implemented yet)_
+6. Pass your own samples into `check` function
 
 ```py
-from leetcode_runner import LeetCode 
+from leetcode_runner import LeetCode, TestCase, Args
 from typing import *
 
 # Copied as is from the LeetCode
@@ -39,7 +37,7 @@ Output: [0,1]
 
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        return []
+        return [1, 2]
 
 LeetCode(problem, Solution).check()
 ```
@@ -47,25 +45,39 @@ LeetCode(problem, Solution).check()
 Will print:
 
 ```text
-----------
+------------------------------
 [ FAILED ]
 nums = [2,7,11,15], target = 9
 Expected: [0, 1]
-Actual  : []
-----------
-[ FAILED ]
+Actual  : [1, 2]
+------------------------------
+[ OK ]
 nums = [3,2,4], target = 6
 Expected: [1, 2]
-Actual  : []
-----------
+Actual  : [1, 2]
+------------------------------
 [ FAILED ]
 nums = [3,3], target = 6
 Expected: [0, 1]
-Actual  : []
+Actual  : [1, 2]
 
+Passed: 1/3
 ```
 
-# Setup
+Providing custom cases is also possible:
+```python
+
+lc = LeetCode(problem, Solution)
+
+lc.check(
+    extra_cases=[
+        TestCase(args=Args(nums=[0, 1, 2], target=3), answer=[1, 2]),
+        # or
+        TestCase(Args(nums=[0, 1], target=1), [0, 1])
+    ]
+)
+
+```
 
 ## Requirements
 
