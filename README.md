@@ -166,10 +166,10 @@ LeetCode(PROBLEM, Solution).check(
 
 # Limitations
 
-- This tool uses Leetcode's GraphQL API under the hood, I'm not sure how long will it be
+- This tool uses Leetcode's GraphQL API under the hood, I'm not sure how long it will be
   available for public usage
-- This tool can download only public problems. Subscription-based requires
-  authentication that is currently not implemented
+- This tool can download only public problems. Subscription-based require authentication
+  that is currently not implemented
 
 ---
 
