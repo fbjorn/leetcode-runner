@@ -20,12 +20,12 @@ def pull(
     content = create_content(problem)
 
     if not out:
-        out = f"{problem.question.question_id}-{slug}.py"
+        out = Path(f"{problem.question.question_id}-{slug}.py")
 
-    Path(out).write_text(content)
+    out.write_text(content, encoding="utf8")
     echo(f"{out} has been created! Happy solving")
 
 
-@cli.command()
-def help():
+@cli.command(name="help")
+def _help():
     pass

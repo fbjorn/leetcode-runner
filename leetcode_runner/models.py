@@ -17,7 +17,7 @@ class TestCase:
 
 
 class LCBaseModel(BaseModel):
-    class Config:
+    class Config:  # noqa
         allow_population_by_field_name = True
 
 
@@ -31,9 +31,6 @@ class CodeSnippet(LCBaseModel):
     lang: str
     lang_slug: str = Field(..., alias="langSlug")
     code: str
-
-    class Config:
-        allow_population_by_field_name = True
 
 
 class Question(LCBaseModel):
