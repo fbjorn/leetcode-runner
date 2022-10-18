@@ -1,9 +1,21 @@
 # Overview
 
-LeetCode solutions runner
-
 [![PyPI Version](https://img.shields.io/pypi/v/leetcode-runner.svg)](https://pypi.org/project/leetcode-runner)
 [![PyPI License](https://img.shields.io/pypi/l/leetcode-runner.svg)](https://pypi.org/project/leetcode-runner)
+
+[LeetCode](leetcode.com) is an excellent platform to practice your algorithm solving skills, but coding in their web editor isn't super convenient.
+
+Most likely, you create solutions in your favourite IDE and run the program several times with different inputs before submitting it, right?
+
+What if you had a CLI utility that by invoking it will offer:
+- Ready-to-run python file with a correct `Solution` placeholder
+- Problem description inside the same file
+- Built-in Input / Output examples
+- Neat test runner
+
+In other words you don't need to copy anything from leetcode. Just a single command and you're ready to rock 🧠
+
+Interested? Welcome!
 
 # Installation
 
@@ -166,6 +178,7 @@ LeetCode(PROBLEM, Solution).check(
 
 # Limitations
 
+- Runner supports python only
 - This tool uses Leetcode's GraphQL API under the hood, I'm not sure how long it will be
   available for public usage
 - This tool can download only public problems. Subscription-based require authentication
