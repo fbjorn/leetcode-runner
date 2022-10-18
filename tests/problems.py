@@ -1,3 +1,5 @@
+# flake8: noqa
+
 P1_TWO_SUMS = """
 Example 1:
 
@@ -12,7 +14,7 @@ Example 3:
 
 Input: nums = [3,3], target = 6
 Output: [0,1]
- 
+
 """
 
 P10_REGEXP_MATCHING = """
@@ -33,5 +35,5 @@ Example 3:
 Input: s = "ab", p = ".*"
 Output: true
 Explanation: ".*" means "zero or more (*) of any character (.)".
- 
+
 """

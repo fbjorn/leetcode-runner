@@ -5,12 +5,67 @@ LeetCode solutions runner
 [![PyPI Version](https://img.shields.io/pypi/v/leetcode-runner.svg)](https://pypi.org/project/leetcode-runner)
 [![PyPI License](https://img.shields.io/pypi/l/leetcode-runner.svg)](https://pypi.org/project/leetcode-runner)
 
+# Installation
+
+Install it directly into an activated virtual environment:
+
+```text
+$ pip install leetcode-runner
+```
+
+or add it to your [Poetry](https://poetry.eustace.io/) project:
+
+```text
+$ poetry add leetcode-runner
+```
+
 # Usage
 
 1. Install the library from PyPi
 2. Go to [LeetCode](https://leetcode.com) and pick a problem to solve
+3. Copy the title slug from the URL (e.g `is-subsequence`) and execute in your terminal:
+
+   ```shell
+   leetcode pull is-subsequence
+   ```
+
+It will create a file called `392-is-subsequence.py` and you can start coding straight
+away!
+
+```shell
+python 392-is-subsequence.py
+# or like this, depends on how you manage your python
+poetry run python 392-is-subsequence.py
+
+------------------------------
+[ FAILED ]
+s = "abc", t = "ahbgdc"
+Expected: True
+Actual  : None
+------------------------------
+[ FAILED ]
+s = "axc", t = "ahbgdc"
+Expected: False
+Actual  : None
+
+Passed: 0/2
+```
+
+By default a method `Solution` doesn't do anything, that's why the answer is None. You
+need to actually solve the problem 😉.
+
+Please read the next section to undestand how it works and also check the
+[limitations](#limitations) section.
+
+# Usage (manual)
+
+This is a legacy way to work with this library
+
+1. Install the library from PyPi
+2. Go to [LeetCode](https://leetcode.com) and pick a problem to solve
 3. Open your favourite IDE and import the `leetcode_runner`
-4. Copy problem samples into some variable, like a `problem`, and copy the base `Solution` class that LeetCode provides
+4. Copy problem samples into some variable, like a `problem`, and copy the base
+   `Solution` class that LeetCode provides
 5. `LeetCode(problem, Solution).check()` will run these samples!
 6. Pass your own samples into `check` function
 
@@ -65,6 +120,7 @@ Passed: 1/3
 ```
 
 Providing custom cases is also possible:
+
 ```python
 
 lc = LeetCode(problem, Solution)
@@ -98,7 +154,7 @@ class Solution:
 
 LeetCode(PROBLEM, Solution).check(
     extra_cases=[
-        
+
     ]
 )
 
@@ -106,23 +162,16 @@ LeetCode(PROBLEM, Solution).check(
 
 # Requirements
 
-* Python 3.9+
+- Python 3.9+
 
-# Installation
+# Limitations
 
-Install it directly into an activated virtual environment:
-
-```text
-$ pip install leetcode-runner
-```
-
-or add it to your [Poetry](https://poetry.eustace.io/) project:
-
-```text
-$ poetry add leetcode-runner
-```
-
+- This tool uses Leetcode's GraphQL API under the hood, I'm not sure how long will it be
+  available for public usage
+- This tool can download only public problems. Subscription-based requires
+  authentication that is currently not implemented
 
 ---
 
-This project was generated with [cookiecutter](https://github.com/audreyr/cookiecutter) using [jacebrowning/template-python](https://github.com/jacebrowning/template-python).
+This project was generated with [cookiecutter](https://github.com/audreyr/cookiecutter)
+using [jacebrowning/template-python](https://github.com/jacebrowning/template-python).

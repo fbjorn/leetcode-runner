@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import os
 import importlib
-import tempfile
+import os
 import shutil
 import subprocess
 import sys
+import tempfile
 
 CWD = os.getcwd()
 TMP = tempfile.gettempdir()
@@ -24,12 +24,12 @@ CONFIG = {
 }
 
 
-def install(package='cookiecutter'):
+def install(package="cookiecutter"):
     try:
         importlib.import_module(package)
     except ImportError:
         print("Installing cookiecutter")
-        subprocess.check_call([sys.executable, '-m', 'pip', 'install', package])
+        subprocess.check_call([sys.executable, "-m", "pip", "install", package])
 
 
 def run():
@@ -39,7 +39,7 @@ def run():
 
     os.chdir(TMP)
     cookiecutter(
-        'https://github.com/jacebrowning/template-python.git',
+        "https://github.com/jacebrowning/template-python.git",
         no_input=True,
         overwrite_if_exists=True,
         extra_context=CONFIG,
@@ -48,31 +48,31 @@ def run():
 
 def copy():
     for filename in [
-        '.coveragerc',
-        '.gitattributes',
-        '.gitignore',
-        '.isort.cfg',
-        '.mypy.ini',
-        '.pydocstyle.ini',
-        '.pylint.ini',
-        '.scrutinizer.yml',
-        '.verchew.ini',
-        'CONTRIBUTING.md',
-        'Makefile',
-        os.path.join('bin', 'checksum'),
-        os.path.join('bin', 'open'),
-        os.path.join('bin', 'update'),
-        os.path.join('bin', 'verchew'),
-        'pytest.ini',
-        'scent.py',
+        ".coveragerc",
+        ".gitattributes",
+        ".gitignore",
+        ".isort.cfg",
+        ".mypy.ini",
+        ".pydocstyle.ini",
+        ".pylint.ini",
+        ".scrutinizer.yml",
+        ".verchew.ini",
+        "CONTRIBUTING.md",
+        "Makefile",
+        os.path.join("bin", "checksum"),
+        os.path.join("bin", "open"),
+        os.path.join("bin", "update"),
+        os.path.join("bin", "verchew"),
+        "pytest.ini",
+        "scent.py",
     ]:
-        src = os.path.join(TMP, CONFIG['project_name'], filename)
+        src = os.path.join(TMP, CONFIG["project_name"], filename)
         dst = os.path.join(CWD, filename)
         print("Updating " + filename)
         shutil.copy(src, dst)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     install()
     run()
     copy()

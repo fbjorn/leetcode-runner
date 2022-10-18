@@ -1,6 +1,8 @@
 from typing import List
+
+from leetcode_runner import Args, LeetCode, TestCase
+
 from .problems import P1_TWO_SUMS, P10_REGEXP_MATCHING
-from leetcode_runner import LeetCode, Args, TestCase
 
 
 def test_parse_p1_two_sums():

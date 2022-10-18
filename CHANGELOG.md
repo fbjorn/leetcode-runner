@@ -1,3 +1,3 @@
-# 0.0.0 (YYYY-MM-DD)
+# 0.0.4 (2022-10-18)
 
- - TBD
+- Added automatic downloading of problems

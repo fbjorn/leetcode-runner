@@ -1,7 +1,7 @@
 [tool.poetry]
 
 name = "leetcode-runner"
-version = "0.0.3"
+version = "0.0.4"
 description = "LeetCode solutions runner"
 
 license = "MIT"
@@ -19,8 +19,6 @@ keywords = [
     "runner",
 ]
 classifiers = [
-    # TODO: update this list to match your application: https://pypi.org/pypi?%3Aaction=list_classifiers
-    "Development Status :: 1 - Planning",
     "Natural Language :: English",
     "Operating System :: OS Independent",
     "Programming Language :: Python",
@@ -33,6 +31,10 @@ classifiers = [
 python = "^3.9"
 colorama = "^0.4.4"
 termcolor = "^1.1.0"
+gql = {extras = ["requests"], version = "^3.4.0"}
+pydantic = "^1.10.2"
+beautifulsoup4 = "^4.11.1"
+typer = "^0.6.1"
 
 
 [tool.poetry.dev-dependencies]
@@ -60,6 +62,7 @@ coveragespace = "^4.0"
 [tool.poetry.scripts]
 
 leetcode_runner = "leetcode_runner.cli:main"
+leetcode = "leetcode_runner.cli:cli"
 
 [tool.black]
 
