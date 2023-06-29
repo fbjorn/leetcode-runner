@@ -5,9 +5,9 @@
 
 [LeetCode](leetcode.com) is an excellent platform to practice your algorithm solving skills, but coding in their web editor isn't super convenient.
 
-Most likely, you create solutions in your favourite IDE and run the program several times with different inputs before submitting it, right?
+Most likely, you develop solutions in your IDE and run the program several times with different inputs before submitting it, right?
 
-What if you had a CLI utility that by invoking it will offer:
+What if you had a CLI utility that would offer:
 - Ready-to-run python file with a correct `Solution` placeholder
 - Problem description inside the same file
 - Built-in Input / Output examples
